@@ -1,0 +1,10 @@
+--- squashfs-tools/LZMA/lzma465/C/Archive/7z/7zHeader.c	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzma465/C/Archive/7z/7zHeader.c	2016-08-25 09:06:03.231530353 -0400
+@@ -0,0 +1,6 @@
++/*  7zHeader.c -- 7z Headers
++2008-10-04 : Igor Pavlov : Public domain */
++
++#include "7zHeader.h"
++
++Byte k7zSignature[k7zSignatureSize] = {'7', 'z', 0xBC, 0xAF, 0x27, 0x1C};
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzma465/C/Archive/7z/7zHeader.h squashfs-tools-patched/LZMA/lzma465/C/Archive/7z/7zHeader.h

@@ -1,0 +1,14 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/ARMThumb.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/ARMThumb.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,10 @@
++// ARMThumb.h
++
++#ifndef __ARMTHUMB_H
++#define __ARMTHUMB_H
++
++#include "BranchCoder.h"
++
++MyClassA(BC_ARMThumb, 0x07, 1)
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/BranchARM.c squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/BranchARM.c

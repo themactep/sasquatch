@@ -1,0 +1,23 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZ/HashChain/HC4.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZ/HashChain/HC4.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,19 @@
++// HC4.h
++
++#ifndef __HC4_H
++#define __HC4_H
++
++#undef HC_NAMESPACE
++#define HC_NAMESPACE NHC4
++
++#define HASH_ARRAY_2
++#define HASH_ARRAY_3
++
++#include "HC.h"
++#include "HCMain.h"
++
++#undef HASH_ARRAY_2
++#undef HASH_ARRAY_3
++
++#endif
++
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZ/HashChain/HC.h squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZ/HashChain/HC.h

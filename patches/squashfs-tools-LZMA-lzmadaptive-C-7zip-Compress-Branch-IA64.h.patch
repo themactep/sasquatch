@@ -1,0 +1,14 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/IA64.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/IA64.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,10 @@
++// IA64.h
++
++#ifndef __IA64_H
++#define __IA64_H
++
++#include "BranchCoder.h"
++
++MyClassA(BC_IA64, 0x04, 1)
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/PPC.cpp squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/PPC.cpp

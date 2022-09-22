@@ -1,0 +1,13 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Common/StdAfx.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Common/StdAfx.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,9 @@
++// StdAfx.h
++
++#ifndef __STDAFX_H
++#define __STDAFX_H
++
++#include "../../Common/MyWindows.h"
++#include "../../Common/NewHandler.h"
++
++#endif 
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Common/StreamUtils.cpp squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Common/StreamUtils.cpp

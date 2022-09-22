@@ -1,0 +1,7 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/StdAfx.cpp	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/StdAfx.cpp	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,3 @@
++// StdAfx.cpp
++
++#include "StdAfx.h"
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/StdAfx.h squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/StdAfx.h

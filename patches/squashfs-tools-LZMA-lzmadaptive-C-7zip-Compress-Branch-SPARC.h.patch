@@ -1,0 +1,14 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/SPARC.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/SPARC.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,10 @@
++// SPARC.h
++
++#ifndef __SPARC_H
++#define __SPARC_H
++
++#include "BranchCoder.h"
++
++MyClassA(BC_SPARC, 0x08, 5)
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/StdAfx.h squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/StdAfx.h

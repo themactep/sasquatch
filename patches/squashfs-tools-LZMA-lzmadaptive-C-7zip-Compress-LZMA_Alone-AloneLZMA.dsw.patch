@@ -1,0 +1,33 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/AloneLZMA.dsw	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/AloneLZMA.dsw	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,29 @@
++Microsoft Developer Studio Workspace File, Format Version 6.00
++# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
++
++###############################################################################
++
++Project: "AloneLZMA"=.\AloneLZMA.dsp - Package Owner=<4>
++
++Package=<5>
++{{{
++}}}
++
++Package=<4>
++{{{
++}}}
++
++###############################################################################
++
++Global:
++
++Package=<5>
++{{{
++}}}
++
++Package=<3>
++{{{
++}}}
++
++###############################################################################
++
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/LzmaAlone.cpp squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/LzmaAlone.cpp

@@ -1,0 +1,28 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zCrc.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zCrc.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,24 @@
++/* 7zCrc.h */
++
++#ifndef __7Z_CRC_H
++#define __7Z_CRC_H
++
++#include <stddef.h>
++
++#include "7zTypes.h"
++
++extern UInt32 g_CrcTable[256];
++void InitCrcTable();
++
++void CrcInit(UInt32 *crc);
++UInt32 CrcGetDigest(UInt32 *crc);
++void CrcUpdateByte(UInt32 *crc, Byte v);
++void CrcUpdateUInt16(UInt32 *crc, UInt16 v);
++void CrcUpdateUInt32(UInt32 *crc, UInt32 v);
++void CrcUpdateUInt64(UInt32 *crc, UInt64 v);
++void CrcUpdate(UInt32 *crc, const void *data, size_t size);
++ 
++UInt32 CrcCalculateDigest(const void *data, size_t size);
++int CrcVerifyDigest(UInt32 digest, const void *data, size_t size);
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zDecode.c squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zDecode.c

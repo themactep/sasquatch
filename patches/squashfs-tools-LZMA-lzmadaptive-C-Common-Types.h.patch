@@ -1,0 +1,23 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/Common/Types.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/Common/Types.h	2016-08-25 09:06:03.231530353 -0400
+@@ -0,0 +1,19 @@
++// Common/Types.h
++
++#ifndef __COMMON_TYPES_H
++#define __COMMON_TYPES_H
++
++typedef unsigned char Byte;
++typedef short Int16;
++typedef unsigned short UInt16;
++typedef int Int32;
++typedef unsigned int UInt32;
++#ifdef _MSC_VER
++typedef __int64 Int64;
++typedef unsigned __int64 UInt64;
++#else
++typedef long long int Int64;
++typedef unsigned long long int UInt64;
++#endif
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/Common/Vector.cpp squashfs-tools-patched/LZMA/lzmadaptive/C/Common/Vector.cpp

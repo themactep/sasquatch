@@ -1,0 +1,9 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zHeader.c	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zHeader.c	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,5 @@
++/*  7zHeader.c */
++
++#include "7zHeader.h"
++
++Byte k7zSignature[k7zSignatureSize] = {'7', 'z', 0xBC, 0xAF, 0x27, 0x1C};
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zHeader.h squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zHeader.h

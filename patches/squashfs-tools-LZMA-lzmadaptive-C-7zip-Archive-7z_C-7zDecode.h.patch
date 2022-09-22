@@ -1,0 +1,25 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zDecode.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zDecode.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,21 @@
++/* 7zDecode.h */
++
++#ifndef __7Z_DECODE_H
++#define __7Z_DECODE_H
++
++#include "7zItem.h"
++#include "7zAlloc.h"
++#ifdef _LZMA_IN_CB
++#include "7zIn.h"
++#endif
++
++SZ_RESULT SzDecode(const CFileSize *packSizes, const CFolder *folder,
++    #ifdef _LZMA_IN_CB
++    ISzInStream *stream,
++    #else
++    const Byte *inBuffer,
++    #endif
++    Byte *outBuffer, size_t outSize, 
++    size_t *outSizeProcessed, ISzAlloc *allocMain);
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zExtract.c squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zExtract.c

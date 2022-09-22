@@ -1,0 +1,6 @@
+--- squashfs-tools/README.md	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/README.md	2016-08-25 09:06:03.223530354 -0400
+@@ -0,0 +1,2 @@
++This is the raw, patched source code for squashfs-tools. It is included in this repository for documentation and administrative purposes only. Any bugs or patches not directly related to the modifications made by the sasquatch patches should be reported to the squashfs-tools project.
++
+diff --strip-trailing-cr -NBbaur squashfs-tools/squashfs_fs.h squashfs-tools-patched/squashfs_fs.h

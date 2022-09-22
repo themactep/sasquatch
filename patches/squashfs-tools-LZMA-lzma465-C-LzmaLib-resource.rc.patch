@@ -1,0 +1,8 @@
+--- squashfs-tools/LZMA/lzma465/C/LzmaLib/resource.rc	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzma465/C/LzmaLib/resource.rc	2016-08-25 09:06:03.231530353 -0400
+@@ -0,0 +1,4 @@
++#include "../../CPP/7zip/MyVersionInfo.rc"
++
++MY_VERSION_INFO_DLL("LZMA library", "LZMA")
++
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzma465/C/LzmaLib.c squashfs-tools-patched/LZMA/lzma465/C/LzmaLib.c

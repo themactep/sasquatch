@@ -1,13 +1,11 @@
 #!/bin/bash
 # Script to download squashfs-tools v4.3, apply the patches, perform a clean build, and install.
 
+SQFS_VER=4.3
+
 # If not root, perform 'make install' with sudo
-if [ $UID -eq 0 ]
-then
-    SUDO=""
-else
-    SUDO="sudo"
-fi
+SUDO=""
+[ "$EUID" -ne 0 ] && SUDO="sudo"
 
 # Install prerequisites
 if hash apt-get &>/dev/null
@@ -16,22 +14,29 @@ then
 fi
 
 # Make sure we're working in the same directory as the build.sh script
-cd $(dirname `readlink  -f $0`)
+cd "$(dirname "$(readlink  -f "$0")")" || exit
 
-# Download squashfs4.3.tar.gz if it does not already exist
-if [ ! -e squashfs4.3.tar.gz ]
+# Download squashfs${SQFS_VER}.tar.gz if it does not already exist
+if [ ! -e squashfs${SQFS_VER}.tar.gz ]
 then
-    wget https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz
+    wget -c https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs${SQFS_VER}/squashfs${SQFS_VER}.tar.gz
 fi
 
 # Remove any previous squashfs4.3 directory to ensure a clean patch/build
-rm -rf squashfs4.3
+rm -rf squashfs${SQFS_VER}
 
-# Extract squashfs4.3.tar.gz
-tar -zxvf squashfs4.3.tar.gz
+echo_c 33 "\nExtracting bundle"
+# Extract squashfs${SQFS_VER}.tar.gz
+tar -zxvf squashfs${SQFS_VER}.tar.gz
 
+echo_c 33 "\nPatching files"
 # Patch, build, and install the source
-cd squashfs4.3
-patch -p0 < ../patches/patch0.txt
-cd squashfs-tools
-make && $SUDO make install
+cd squashfs${SQFS_VER} || exit
+
+# patch -p0 < ../patches/patch0.txt
+# find ../patches/ -name "*.patch" -print0 | xargs -0 patch -p2
+for i in ../patches/*.patch; do patch -p0 <"$i"; done
+
+cd squashfs-tools || exit
+
+make EXTRA_CFLAGS=-fcommon && $SUDO make install

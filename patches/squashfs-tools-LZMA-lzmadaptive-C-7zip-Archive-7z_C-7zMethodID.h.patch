@@ -1,0 +1,22 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zMethodID.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zMethodID.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,18 @@
++/* 7zMethodID.h */
++
++#ifndef __7Z_METHOD_ID_H
++#define __7Z_METHOD_ID_H
++
++#include "7zTypes.h"
++
++#define kMethodIDSize 15
++  
++typedef struct _CMethodID
++{
++  Byte ID[kMethodIDSize];
++  Byte IDSize;
++} CMethodID;
++
++int AreMethodsEqual(CMethodID *a1, CMethodID *a2);
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zTypes.h squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zTypes.h

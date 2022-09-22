@@ -1,0 +1,15 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Common/StreamUtils.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Common/StreamUtils.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,11 @@
++// StreamUtils.h
++
++#ifndef __STREAMUTILS_H
++#define __STREAMUTILS_H
++
++#include "../IStream.h"
++
++HRESULT ReadStream(ISequentialInStream *stream, void *data, UInt32 size, UInt32 *processedSize);
++HRESULT WriteStream(ISequentialOutStream *stream, const void *data, UInt32 size, UInt32 *processedSize);
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/ARM.cpp squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/ARM.cpp

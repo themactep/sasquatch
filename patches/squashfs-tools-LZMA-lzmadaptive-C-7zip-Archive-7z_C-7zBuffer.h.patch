@@ -1,0 +1,23 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zBuffer.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7zBuffer.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,19 @@
++/* 7zBuffer.h */
++
++#ifndef __7Z_BUFFER_H
++#define __7Z_BUFFER_H
++
++#include <stddef.h>
++#include "7zTypes.h"
++
++typedef struct _CSzByteBuffer
++{    
++	size_t Capacity;
++  Byte *Items;
++}CSzByteBuffer;
++
++void SzByteBufferInit(CSzByteBuffer *buffer);
++int SzByteBufferCreate(CSzByteBuffer *buffer, size_t newCapacity, void * (*allocFunc)(size_t size));
++void SzByteBufferFree(CSzByteBuffer *buffer, void (*freeFunc)(void *));
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7z_C.dsp squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Archive/7z_C/7z_C.dsp

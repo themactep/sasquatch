@@ -1,0 +1,22 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/x86.cpp	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/x86.cpp	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,18 @@
++// x86.cpp
++
++#include "StdAfx.h"
++#include "x86.h"
++
++#include "Windows/Defs.h"
++
++#include "BranchX86.c"
++
++UInt32 CBCJ_x86_Encoder::SubFilter(Byte *data, UInt32 size)
++{
++  return ::x86_Convert(data, size, _bufferPos, &_prevMask, &_prevPos, 1);
++}
++
++UInt32 CBCJ_x86_Decoder::SubFilter(Byte *data, UInt32 size)
++{
++  return ::x86_Convert(data, size, _bufferPos, &_prevMask, &_prevPos, 0);
++}
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/x86.h squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/x86.h

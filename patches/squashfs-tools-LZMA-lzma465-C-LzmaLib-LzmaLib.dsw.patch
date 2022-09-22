@@ -1,0 +1,33 @@
+--- squashfs-tools/LZMA/lzma465/C/LzmaLib/LzmaLib.dsw	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzma465/C/LzmaLib/LzmaLib.dsw	2016-08-25 09:06:03.231530353 -0400
+@@ -0,0 +1,29 @@
++Microsoft Developer Studio Workspace File, Format Version 6.00
++# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
++
++###############################################################################
++
++Project: "LzmaLib"=.\LzmaLib.dsp - Package Owner=<4>
++
++Package=<5>
++{{{
++}}}
++
++Package=<4>
++{{{
++}}}
++
++###############################################################################
++
++Global:
++
++Package=<5>
++{{{
++}}}
++
++Package=<3>
++{{{
++}}}
++
++###############################################################################
++
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzma465/C/LzmaLib/LzmaLibExports.c squashfs-tools-patched/LZMA/lzma465/C/LzmaLib/LzmaLibExports.c

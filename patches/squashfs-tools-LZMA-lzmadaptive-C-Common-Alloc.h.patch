@@ -1,0 +1,33 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/Common/Alloc.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/Common/Alloc.h	2016-08-25 09:06:03.231530353 -0400
+@@ -0,0 +1,29 @@
++// Common/Alloc.h
++
++#ifndef __COMMON_ALLOC_H
++#define __COMMON_ALLOC_H
++
++#include <stddef.h>
++
++void *MyAlloc(size_t size) throw();
++void MyFree(void *address) throw();
++
++#ifdef _WIN32
++
++bool SetLargePageSize();
++
++void *MidAlloc(size_t size) throw();
++void MidFree(void *address) throw();
++void *BigAlloc(size_t size) throw();
++void BigFree(void *address) throw();
++
++#else
++
++#define MidAlloc(size) MyAlloc(size)
++#define MidFree(address) MyFree(address)
++#define BigAlloc(size) MyAlloc(size)
++#define BigFree(address) MyFree(address)
++
++#endif
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/Common/C_FileIO.cpp squashfs-tools-patched/LZMA/lzmadaptive/C/Common/C_FileIO.cpp

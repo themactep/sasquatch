@@ -1,0 +1,14 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/BranchSPARC.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/BranchSPARC.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,10 @@
++// BranchSPARC.h
++
++#ifndef __BRANCH_SPARC_H
++#define __BRANCH_SPARC_H
++
++#include "Common/Types.h"
++
++UInt32 SPARC_B_Convert(Byte *data, UInt32 size, UInt32 nowPos, int encoding);
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/Branch/BranchX86.c squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/Branch/BranchX86.c

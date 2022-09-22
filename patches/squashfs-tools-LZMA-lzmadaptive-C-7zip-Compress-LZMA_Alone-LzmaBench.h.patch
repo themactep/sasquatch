@@ -1,0 +1,15 @@
+--- squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/LzmaBench.h	1969-12-31 19:00:00.000000000 -0500
++++ squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/LzmaBench.h	2016-08-25 09:06:03.227530354 -0400
+@@ -0,0 +1,11 @@
++// LzmaBench.h
++
++#ifndef __LzmaBench_h
++#define __LzmaBench_h
++
++#include <stdio.h>
++#include "../../../Common/Types.h"
++
++int LzmaBenchmark(FILE *f, UInt32 numIterations, UInt32 dictionarySize, bool isBT4);
++
++#endif
+diff --strip-trailing-cr -NBbaur squashfs-tools/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/LzmaRam.cpp squashfs-tools-patched/LZMA/lzmadaptive/C/7zip/Compress/LZMA_Alone/LzmaRam.cpp

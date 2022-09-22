@@ -1,0 +1,15 @@
+--- squashfs-tools/read_fs.c	2016-08-25 09:06:22.983529595 -0400
++++ squashfs-tools-patched/read_fs.c	2016-08-25 09:06:03.231530353 -0400
+@@ -87,8 +87,9 @@
+ 		res = compressor_uncompress(comp, block, buffer, c_byte,
+ 			outlen, &error);
+ 		if(res == -1) {
+-			ERROR("%s uncompress failed with error code %d\n",
+-				comp->name, error);
++            // CJH: Decompression errors are displayed elsewhere
++			//ERROR("%s uncompress failed with error code %d\n",
++			//	comp->name, error);
+ 			return 0;
+ 		}
+ 	} else {
+diff --strip-trailing-cr -NBbaur squashfs-tools/README.md squashfs-tools-patched/README.md
