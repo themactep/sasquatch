@@ -59,7 +59,8 @@
 -INCLUDEDIR += -I$(LZMA_DIR)/C
 +# CJH: Added LZMA variant directories
 +INCLUDEDIR += -I$(LZMA_DIR)/C -I$(LZMA_ALT_DIR) -I$(LZMA_ADAPT_DIR)
- CFLAGS += -DLZMA_SUPPORT
+-CFLAGS += -DLZMA_SUPPORT
++CFLAGS += -DLZMA_SUPPORT -Wno-dangling-pointer
  MKSQUASHFS_OBJS += lzma_wrapper.o $(LZMA_OBJS)
  UNSQUASHFS_OBJS += lzma_wrapper.o $(LZMA_OBJS)
  COMPRESSORS += lzma
